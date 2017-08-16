@@ -1,7 +1,7 @@
-const Person = require('../../main/practice-1/person');
-const Student = require('../../main/practice-1/student');
-const Worker = require('../../main/practice-1/worker');
-
+const Person = require('../../main/practice-1/person.js');
+const Student = require('../../main/practice-1/student.js');
+const Worker = require('../../main/practice-1/worker.js');
+'use strict';
 describe("Person", () => {
   it("should have field name and age", () => {
     let person = new Person("Tom", 21);
@@ -23,7 +23,7 @@ describe("Person", () => {
       let student = new Student("Tom", 21, 2);
       expect(student.name).toBe("Tom");
       expect(student.age).toBe(21);
-      expect(student.klass).toBe(2);
+      expect(student.clazz).toBe(2);
 
     });
 
