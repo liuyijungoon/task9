@@ -1,6 +1,6 @@
-const Person = require('../../main/practice-2/person');
+const Person = require('../../main/practice-2/person.js');
 const Student = require('../../main/practice-2/student');
-const Teacher = require('../../main/practice-2/teacher');
+const Teacher = require('../../main/practice-2/teacher.js');
 const Class = require('../../main/practice-2/class');
 
 describe("Person", () => {
@@ -42,7 +42,7 @@ describe("Person", () => {
     () => {
       let clazz = new Class(2);
       let student = new Student("Tom", 21, clazz);
-      clazz.assignLeader(student);
+      clazz.assignLeader("Tom");
       let introduce = student.introduce();
 
       expect(introduce).toBe("My name is Tom. I am 21 years old. I am a Student. I am Leader of Class 2.");
