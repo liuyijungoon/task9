@@ -156,10 +156,10 @@ describe("Class", () => {
     let clazz = new Class(2);
     let student = new Student("Jerry", 21, clazz);
     let teacher = new Teacher("Tom", 21, [clazz]);
-    spyOn(teacher, 'notifyStudentAppended');
+    spyOn(console, 'log');
     clazz.appendMember(student);
     teacher.notifyStudentAppended();
-    expect(teacher.notifyStudentAppended).toHaveBeenCalledWith("Jerry has joined Class 2");
+    expect(console.log).toHaveBeenCalledWith("Jerry has joined Class 2");
   });
 
   it("should call teacher's assign class leader event, when a student is assigned to b" +
@@ -168,12 +168,11 @@ describe("Class", () => {
     let clazz = new Class(2);
     let student = new Student("Jerry", 21, clazz);
     let teacher = new Teacher("Tom", 21, [clazz]);
-    spyOn(teacher, 'notifyLeaderAssigned');
-    spyOn(teacher, 'notifyStudentAppended');   
+    spyOn(console, 'log');
     clazz.appendMember(student);
     clazz.assignLeader(student);
     teacher.notifyLeaderAssigned()
-    expect(teacher.notifyLeaderAssigned).toHaveBeenCalledWith("Jerry become Leader of Class 2")
+    expect(console.log).toHaveBeenCalledWith("Jerry become Leader of Class 2")
   });
 
 });
